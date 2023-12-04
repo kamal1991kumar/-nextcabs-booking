@@ -33,7 +33,7 @@ export default function BookingPage() {
                                             <h4 className='pb-2'>Book with confidence</h4>
                                             <p className="fw-light">We care about the reliability of your airport transfer. But don't just take our word for it, read reviews from our customers, published on independent review website</p>
                                         </div>
-                                        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+
                                         <div className="elfsight-app-a78a4d97-ab23-437c-814d-cddec42da778" data-elfsight-app-lazy></div>
                                     </div>
                                 </div>
