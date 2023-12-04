@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Nextcabs-Booking/static/css/main.9637f49e.css",
-    "main.js": "/Nextcabs-Booking/static/js/main.8782b447.js",
+    "main.js": "/Nextcabs-Booking/static/js/main.a34f807e.js",
     "static/media/intro-transfer-img.jpg": "/Nextcabs-Booking/static/media/intro-transfer-img.c3ce281950146b9fcd76.jpg",
     "index.html": "/Nextcabs-Booking/index.html",
     "main.9637f49e.css.map": "/Nextcabs-Booking/static/css/main.9637f49e.css.map",
-    "main.8782b447.js.map": "/Nextcabs-Booking/static/js/main.8782b447.js.map"
+    "main.a34f807e.js.map": "/Nextcabs-Booking/static/js/main.a34f807e.js.map"
   },
   "entrypoints": [
     "static/css/main.9637f49e.css",
-    "static/js/main.8782b447.js"
+    "static/js/main.a34f807e.js"
   ]
 }
