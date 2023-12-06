@@ -22,12 +22,12 @@ export default function BookingPage() {
                     </div>
                 </div>
             </div>
-            <div className='container py-3 py-lg-5 my-lg-5'>
+            <div className='container pt-3 py-lg-5 mt-lg-5 mb-lg-3'>
                 <div className='row justify-content-lg-center'>
                     <div className='col-lg-10'>
                         <div className='row'>
                             <div className='col-12 col-lg-6'>
-                                <div className="card shadow-sm  mb-3" >
+                                <div className="card shadow-sm  mb-4" >
                                     <div className="card-body">
                                         <div className='text-center px-5 py-3'>
                                             <h4 className='pb-2'>Book with confidence</h4>
@@ -39,7 +39,7 @@ export default function BookingPage() {
                                 </div>
                             </div>
                             <div className='col-12 col-lg-6'>
-                                <div className="card shadow-sm  mb-3" >
+                                <div className="card shadow-sm  mb-4" >
                                     <img src="https://airportstaxitransfers.com/assets/images/misc/free-cancellation.jpg" className="card-img-top" />
                                     <div className="card-body">
                                         <div className='text-center px-5 py-3'>
@@ -48,7 +48,7 @@ export default function BookingPage() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="card shadow-sm  mb-3" >
+                                <div className="card shadow-sm  mb-4" >
                                     <img src="https://airportstaxitransfers.com/assets/images/misc/free-cancellation.jpg" className="card-img-top" />
                                     <div className="card-body">
                                         <div className='text-center px-5 py-3'>
@@ -60,7 +60,7 @@ export default function BookingPage() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="card shadow-sm  mb-3" >
+                                <div className="card shadow-sm  mb-4" >
                                     <img src="https://airportstaxitransfers.com/assets/images/misc/free-cancellation.jpg" className="card-img-top" />
                                     <div className="card-body">
                                         <div className='text-center px-5 py-3'>
@@ -74,9 +74,41 @@ export default function BookingPage() {
                                 </div>
                             </div>
                         </div>
+                        <div className='row'>
+                            <div className='col-12 col-lg-6'>
+                                <div className="card shadow-sm  mb-4" >
+                                    <img src="https://airportstaxitransfers.com/assets/images/locations/1517057075_barcelona-airport-transfers.jpg" className="card-img-top" />
+                                    <div className="card-body text-center py-4">
+
+                                        <p className="card-text  px-5">
+                                            <a href='#' className='text-body  text-decoration-none'>Barcelona Airport to Barcelona City Centre<br /> up to 3 passengers <strong className='text-decoration-underline'>EUR 79.95</strong>
+                                            </a>
+                                        </p>
+
+                                        <a class="btn btn-outline-primary btn-lg">
+                                            Barcelona Airport Taxi Transfers</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='col-12 col-lg-6'>
+                                <div className="card shadow-sm  mb-4" >
+                                    <img src="https://airportstaxitransfers.com/assets/images/locations/1517057075_barcelona-airport-transfers.jpg" className="card-img-top" />
+                                    <div className="card-body text-center py-4">
+
+                                        <p className="card-text  px-5">
+                                            <a href='#' className='text-body  text-decoration-none'>Barcelona Airport to Barcelona City Centre<br /> up to 3 passengers <strong className='text-decoration-underline'>EUR 79.95</strong>
+                                            </a>
+                                        </p>
+
+                                        <a class="btn btn-outline-primary btn-lg">
+                                            Barcelona Airport Taxi Transfers</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </BaseLayout>
+        </BaseLayout >
     )
 }
