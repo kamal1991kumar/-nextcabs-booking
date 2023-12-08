@@ -85,7 +85,7 @@ export default function BookingPage() {
                                             </a>
                                         </p>
 
-                                        <a class="btn btn-outline-primary btn-lg">
+                                        <a className="btn btn-outline-primary btn-lg">
                                             Barcelona Airport Taxi Transfers</a>
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@ export default function BookingPage() {
                                             </a>
                                         </p>
 
-                                        <a class="btn btn-outline-primary btn-lg">
+                                        <a className="btn btn-outline-primary btn-lg">
                                             Barcelona Airport Taxi Transfers</a>
                                     </div>
                                 </div>
