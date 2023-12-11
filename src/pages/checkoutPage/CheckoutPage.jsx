@@ -18,6 +18,7 @@ export default function CheckoutPage() {
         return p;
     }, 0);
 
+    const totalPrice = cabInfo?.price + totalAddons;
     useEffect(() => {
         if (tripInfo?.surcharge?.surcharges.length) {
             const _filter = tripInfo?.surcharge?.surcharges?.filter(i => i?.chargeValue > 0);
@@ -138,7 +139,7 @@ export default function CheckoutPage() {
                                                 </div>
                                                 <div className="row mb-2">
                                                     <strong className='col-6'>Total Price</strong>
-                                                    <span className='col-6'>GBP0</span>
+                                                    <span className='col-6'>GBP {totalPrice}</span>
                                                 </div>
                                             </div>
                                             <div className="form-check mb-3">

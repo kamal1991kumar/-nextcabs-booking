@@ -1,16 +1,29 @@
 const { REACT_APP_BACKEND_URL } = process.env;
 const APIURL = REACT_APP_BACKEND_URL;
 
-async function api(url, data = {}, method = 'get') {
-    const response = await fetch(url, {
-        method,
-        body: JSON.stringify(data)
-    });
-    const result = await response.json();
-    if (result?.status === 'success') {
-        return result;
+async function api(url, params = {}, method = 'GET') {
+    try {
+        const options = {
+            method
+        };
+        if ('GET' === method) {
+            url += '?' + (new URLSearchParams(params)).toString();
+        } else {
+            options.body = JSON.stringify(params);
+        }
+
+        const response = await fetch(url, options);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        if (result?.status === 'success') {
+            return result;
+        }
+    } catch (e) {
+        console.log(e, 'err', url)
     }
-    return {};
+
 };
 
 const Http = {
@@ -28,7 +41,7 @@ const Http = {
                 placeId: toId
             }
         };
-        return await api(`${APIURL}trip-pricing`, payload, 'post')
+        return await api(`${APIURL}trip-pricing`, payload, 'POST')
     }
 };
 
