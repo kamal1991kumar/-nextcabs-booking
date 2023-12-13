@@ -77,7 +77,7 @@ const Utils = {
 
         return _init;
     },
-    getTripList(list, info, isReturn) {
+    getTripListing(list, info, isReturn) {
         if (Object.keys(info).length === 0) {
             return [];
         }

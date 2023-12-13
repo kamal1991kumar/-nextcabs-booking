@@ -6,7 +6,8 @@ import Utils from 'helper/utils';
 import { AppContext } from 'context/AppContext';
 
 export default function CheckoutPage() {
-    const { tripInfo, cabInfo } = useContext(AppContext);
+    const checkoutContext = useContext(AppContext);
+    const { tripInfo, cabInfo, paymentCheckout, checkoutInfo, updateCheckoutInfo } = checkoutContext;
     const [addons, setAddons] = useState({});
     const addOnslist = Object.keys(addons) || [];
 
@@ -19,6 +20,13 @@ export default function CheckoutPage() {
     }, 0);
 
     const totalPrice = cabInfo?.price + totalAddons;
+
+    const onCheckoutClick = async () => {
+        const result = await paymentCheckout();
+        window.open(result?.url, "_self");
+    };
+
+
     useEffect(() => {
         if (tripInfo?.surcharge?.surcharges.length) {
             const _filter = tripInfo?.surcharge?.surcharges?.filter(i => i?.chargeValue > 0);
@@ -74,11 +82,21 @@ export default function CheckoutPage() {
 
                                             <div className="mb-3 mt-3">
                                                 <label htmlFor="flightNumber1" className="form-label bg-secondary mb-0 py-1 px-3 rounded-top text-white">Flight Number</label>
-                                                <input type="text" className="form-control" id="flightNumber1" />
+                                                <input type="text"
+                                                    value={checkoutInfo.flightNumber}
+                                                    onChange={(e) => updateCheckoutInfo({
+                                                        flightNumber: e.currentTarget.value
+                                                    })}
+                                                    className="form-control" id="flightNumber1" />
                                             </div>
                                             <div className="">
                                                 <label htmlFor="specialInstructions1" className="form-label bg-secondary mb-0 py-1 px-3 rounded-top text-white">Special Instructions</label>
-                                                <textarea className="form-control" id="specialInstructions1" rows="3"></textarea>
+                                                <textarea
+                                                    value={checkoutInfo.specialInstruction}
+                                                    onChange={(e) => updateCheckoutInfo({
+                                                        specialInstruction: e.currentTarget.value
+                                                    })}
+                                                    className="form-control" id="specialInstructions1" rows="3" />
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +108,10 @@ export default function CheckoutPage() {
                                         <div className='card-body'>
                                             <div className="mb-3">
                                                 <label htmlFor="fullname1" className="form-label bg-secondary mb-0 py-1 px-3 rounded-top text-white">Full Name</label>
-                                                <input type="text" className="form-control" id="fullname1" />
+                                                <input
+                                                    checked={checkoutInfo.fullName}
+                                                    onChange={(e) => updateCheckoutInfo({ fullName: e.currentTarget.value })}
+                                                    type="text" className="form-control" id="fullname1" />
                                             </div>
                                             <div className="mb-3">
                                                 <label htmlFor="mobileNumber" className="form-label bg-secondary mb-0 py-1 px-3 rounded-top text-white">Mobile Number</label>
@@ -98,16 +119,25 @@ export default function CheckoutPage() {
                                                     <select id='mobileNumber' className="input-group-text">
                                                         <option>+44</option>
                                                     </select>
-                                                    <input id='mobileNumber' type="text" className="form-control" placeholder="Mobile Number" />
+                                                    <input
+                                                        checked={checkoutInfo.phoneNumber}
+                                                        onChange={(e) => updateCheckoutInfo({ phoneNumber: e.currentTarget.value })}
+                                                        id='mobileNumber' type="text" className="form-control" placeholder="Mobile Number" />
                                                 </div>
                                             </div>
                                             <div className="mb-3">
                                                 <label htmlFor="email1" className="form-label bg-secondary mb-0 py-1 px-3 rounded-top text-white">Email</label>
-                                                <input type="email" className="form-control" id="email1" />
+                                                <input
+                                                    checked={checkoutInfo.email}
+                                                    onChange={(e) => updateCheckoutInfo({ email: e.currentTarget.value })}
+                                                    type="email" className="form-control" id="email1" />
                                             </div>
                                             <div >
                                                 <label htmlFor="confirEmail1" className="form-label bg-secondary mb-0 py-1 px-3 rounded-top text-white">Confirm Email</label>
-                                                <input type="email" className="form-control" id="confirEmail1" />
+                                                <input
+                                                    checked={checkoutInfo.confirmemail}
+                                                    onChange={(e) => updateCheckoutInfo({ confirmemail: e.currentTarget.value })}
+                                                    type="email" className="form-control" id="confirEmail1" />
                                             </div>
                                         </div>
                                     </div>
@@ -123,7 +153,7 @@ export default function CheckoutPage() {
                                                 </div>
                                                 <div className="row mb-2">
                                                     <strong className='col-6'>Vehicle Type</strong>
-                                                    <span className='col-6'>Estate</span>
+                                                    <span className='col-6'>{cabInfo?.type}</span>
                                                 </div>
                                                 <div className="row mb-2">
                                                     <strong className='col-6'>Estimated Distance</strong>
@@ -143,15 +173,25 @@ export default function CheckoutPage() {
                                                 </div>
                                             </div>
                                             <div className="form-check mb-3">
-                                                <input type="checkbox" className="form-check-input" id="createAccount1" />
+                                                <input
+                                                    checked={checkoutInfo.isOnboardCustomer}
+                                                    onChange={() => updateCheckoutInfo({
+                                                        isOnboardCustomer: !checkoutInfo.isOnboardCustomer
+                                                    })}
+                                                    type="checkbox" className="form-check-input" id="createAccount1" />
                                                 <label className="form-check-label" htmlFor="createAccount1">Selecting this will create your account with us to enable faster checkout next time.</label>
                                             </div>
                                             <div className="form-check mb-3">
-                                                <input type="checkbox" className="form-check-input" id="terms1" required />
+                                                <input
+                                                    checked={checkoutInfo.termsAndCondition}
+                                                    onChange={() => updateCheckoutInfo({
+                                                        termsAndCondition: !checkoutInfo.termsAndCondition
+                                                    })}
+                                                    type="checkbox" className="form-check-input" id="terms1" required />
                                                 <label className="form-check-label" htmlFor="terms1">I have read and agree to the <a href="...">terms &amp; conditions</a> and <a href="...">privacy and policy</a>.</label>
                                             </div>
                                             <div className='text-center py-4'>
-                                                <button className='btn btn-primary btn-lg py-3 px-4'>Continue to payment  <MdArrowCircleRight /></button>
+                                                <button className='btn btn-primary btn-lg py-3 px-4' onClick={onCheckoutClick}>Continue to payment  <MdArrowCircleRight /></button>
                                             </div>
                                         </div>
                                     </div>

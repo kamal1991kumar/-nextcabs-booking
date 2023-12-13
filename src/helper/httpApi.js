@@ -1,5 +1,6 @@
-const { REACT_APP_BACKEND_URL } = process.env;
-const APIURL = REACT_APP_BACKEND_URL;
+const { REACT_APP_BACKEND_URL, REACT_APP_LOGO } = process.env;
+export const APIURL = REACT_APP_BACKEND_URL;
+export const LOGO = REACT_APP_LOGO;
 
 async function api(url, params = {}, method = 'GET') {
     try {
@@ -30,18 +31,11 @@ const Http = {
     async searchLocation(str) {
         return await api(`${APIURL}google/search-location?search=${str}&limit=5`);
     },
-    async getTripList({ from, fromId, to, toId }) {
-        const payload = {
-            fromAddress: {
-                freeformAddress: from,
-                placeId: fromId
-            },
-            toAddress: {
-                freeformAddress: to,
-                placeId: toId
-            }
-        };
+    async getTripList(payload) {
         return await api(`${APIURL}trip-pricing`, payload, 'POST')
+    },
+    async tripCheckout(payload) {
+        return await api(`${APIURL}trip`, payload, 'POST')
     }
 };
 

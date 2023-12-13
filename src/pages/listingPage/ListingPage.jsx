@@ -11,7 +11,7 @@ export default function ListingPage() {
     const navigate = useNavigate();
     const { tripInfo, getTripList, searchData, setCabInfo } = useContext(AppContext);
     const isSearchEnabled = Utils.canSearch(searchData);
-    const listing = Utils.getTripList(tripList, tripInfo, searchData?.isReturn);
+    const listing = Utils.getTripListing(tripList, tripInfo, searchData?.isReturn);
 
     const onBookClick = (payload) => {
         setCabInfo(payload);
