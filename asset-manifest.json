@@ -1,15 +1,25 @@
 {
   "files": {
-    "main.css": "/Nextcabs-Booking/static/css/main.dd8c5138.css",
-    "main.js": "/Nextcabs-Booking/static/js/main.19ea6c5a.js",
+    "main.css": "/Nextcabs-Booking/static/css/main.cf63f059.css",
+    "main.js": "/Nextcabs-Booking/static/js/main.7fa6a29e.js",
+    "static/css/683.eef48ef9.chunk.css": "/Nextcabs-Booking/static/css/683.eef48ef9.chunk.css",
+    "static/js/683.88118b9d.chunk.js": "/Nextcabs-Booking/static/js/683.88118b9d.chunk.js",
+    "static/css/527.eef48ef9.chunk.css": "/Nextcabs-Booking/static/css/527.eef48ef9.chunk.css",
+    "static/js/527.5e6f170a.chunk.js": "/Nextcabs-Booking/static/js/527.5e6f170a.chunk.js",
+    "static/css/804.9490a4f2.chunk.css": "/Nextcabs-Booking/static/css/804.9490a4f2.chunk.css",
+    "static/js/804.3f6c738a.chunk.js": "/Nextcabs-Booking/static/js/804.3f6c738a.chunk.js",
+    "static/js/168.061b0253.chunk.js": "/Nextcabs-Booking/static/js/168.061b0253.chunk.js",
+    "static/js/32.efc9643f.chunk.js": "/Nextcabs-Booking/static/js/32.efc9643f.chunk.js",
     "static/media/intro-transfer-img.jpg": "/Nextcabs-Booking/static/media/intro-transfer-img.c3ce281950146b9fcd76.jpg",
     "static/media/8seater.png": "/Nextcabs-Booking/static/media/8seater.f5e5d1ad30b615260e54.png",
-    "index.html": "/Nextcabs-Booking/index.html",
-    "main.dd8c5138.css.map": "/Nextcabs-Booking/static/css/main.dd8c5138.css.map",
-    "main.19ea6c5a.js.map": "/Nextcabs-Booking/static/js/main.19ea6c5a.js.map"
+    "static/media/estate.png": "/Nextcabs-Booking/static/media/estate.c94f448f632cd5df4292.png",
+    "static/media/mvp.png": "/Nextcabs-Booking/static/media/mvp.a5215ab131b28c8c77ad.png",
+    "static/media/executive1.png": "/Nextcabs-Booking/static/media/executive1.4db09d904890fb5ff721.png",
+    "static/media/saloon.png": "/Nextcabs-Booking/static/media/saloon.ae91d642a717f1893eb1.png",
+    "index.html": "/Nextcabs-Booking/index.html"
   },
   "entrypoints": [
-    "static/css/main.dd8c5138.css",
-    "static/js/main.19ea6c5a.js"
+    "static/css/main.cf63f059.css",
+    "static/js/main.7fa6a29e.js"
   ]
 }
