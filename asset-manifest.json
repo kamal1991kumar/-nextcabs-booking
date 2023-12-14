@@ -1,15 +1,19 @@
 {
   "files": {
     "main.css": "/Nextcabs-Booking/static/css/main.cf63f059.css",
-    "main.js": "/Nextcabs-Booking/static/js/main.7fa6a29e.js",
-    "static/css/683.eef48ef9.chunk.css": "/Nextcabs-Booking/static/css/683.eef48ef9.chunk.css",
-    "static/js/683.88118b9d.chunk.js": "/Nextcabs-Booking/static/js/683.88118b9d.chunk.js",
-    "static/css/527.eef48ef9.chunk.css": "/Nextcabs-Booking/static/css/527.eef48ef9.chunk.css",
-    "static/js/527.5e6f170a.chunk.js": "/Nextcabs-Booking/static/js/527.5e6f170a.chunk.js",
-    "static/css/804.9490a4f2.chunk.css": "/Nextcabs-Booking/static/css/804.9490a4f2.chunk.css",
-    "static/js/804.3f6c738a.chunk.js": "/Nextcabs-Booking/static/js/804.3f6c738a.chunk.js",
+    "main.js": "/Nextcabs-Booking/static/js/main.6cf57e7e.js",
+    "static/css/633.9490a4f2.chunk.css": "/Nextcabs-Booking/static/css/633.9490a4f2.chunk.css",
+    "static/js/633.ff32c689.chunk.js": "/Nextcabs-Booking/static/js/633.ff32c689.chunk.js",
+    "static/css/105.eef48ef9.chunk.css": "/Nextcabs-Booking/static/css/105.eef48ef9.chunk.css",
+    "static/js/105.d3a4ef45.chunk.js": "/Nextcabs-Booking/static/js/105.d3a4ef45.chunk.js",
+    "static/css/145.38c6fc16.chunk.css": "/Nextcabs-Booking/static/css/145.38c6fc16.chunk.css",
+    "static/js/145.1e5a93a6.chunk.js": "/Nextcabs-Booking/static/js/145.1e5a93a6.chunk.js",
+    "static/css/327.eef48ef9.chunk.css": "/Nextcabs-Booking/static/css/327.eef48ef9.chunk.css",
+    "static/js/327.754d680c.chunk.js": "/Nextcabs-Booking/static/js/327.754d680c.chunk.js",
+    "static/css/375.eef48ef9.chunk.css": "/Nextcabs-Booking/static/css/375.eef48ef9.chunk.css",
+    "static/js/375.14f29d1a.chunk.js": "/Nextcabs-Booking/static/js/375.14f29d1a.chunk.js",
     "static/js/168.061b0253.chunk.js": "/Nextcabs-Booking/static/js/168.061b0253.chunk.js",
-    "static/js/32.efc9643f.chunk.js": "/Nextcabs-Booking/static/js/32.efc9643f.chunk.js",
+    "static/js/930.3a7119f2.chunk.js": "/Nextcabs-Booking/static/js/930.3a7119f2.chunk.js",
     "static/media/intro-transfer-img.jpg": "/Nextcabs-Booking/static/media/intro-transfer-img.c3ce281950146b9fcd76.jpg",
     "static/media/8seater.png": "/Nextcabs-Booking/static/media/8seater.f5e5d1ad30b615260e54.png",
     "static/media/estate.png": "/Nextcabs-Booking/static/media/estate.c94f448f632cd5df4292.png",
@@ -20,6 +24,6 @@
   },
   "entrypoints": [
     "static/css/main.cf63f059.css",
-    "static/js/main.7fa6a29e.js"
+    "static/js/main.6cf57e7e.js"
   ]
 }
