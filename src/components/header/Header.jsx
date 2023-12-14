@@ -1,5 +1,7 @@
 import React from 'react';
 import Logo from 'assets/logo.png';
+import countries from 'helper/countryCode';
+
 export default function Header() {
     return (
         <div className='header bg-white'>
@@ -24,18 +26,18 @@ export default function Header() {
                                             <a className="nav-link" aria-current="page" href="#">About</a>
                                         </li>
                                         <li className='nav-item dropdown'>
-                                            <div role='button' className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href='javascript:void(0)'>
+                                            <div role='button' className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                                 My Booking
                                             </div>
-                                            <form className="dropdown-menu dropdown-menu-end p-2">
+                                            <div className="dropdown-menu dropdown-menu-end p-2">
                                                 <div className="input-group flex-nowrap mb-2">
                                                     <select className="input-group-text">
-                                                        <option>+44</option>
+                                                        {countries.map(i => <option key={i?.code} value={`+${i?.phone}`}>+{i?.phone}</option>)}
                                                     </select>
                                                     <input type="text" className="form-control" placeholder="Mobile Number" />
                                                 </div>
-                                                <button className="btn btn-secondary float-end" type="button">Send OTP</button>
-                                            </form>
+                                                <div className="btn btn-secondary float-end">Send OTP</div>
+                                            </div>
                                         </li>
                                     </ul>
 

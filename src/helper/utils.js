@@ -92,6 +92,43 @@ const Utils = {
                 price: isReturn ? (2 * price) : price,
             };
         });
+    },
+    validateEmail(email) {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    },
+    validateMobile(m) {
+        const reg = /^(?:[0-9] ?){6,14}[0-9]$/;
+        return reg.test(m);
+    },
+    checkoutValidation(values, validationField, setError = () => { }) {
+        const fields = Object.keys(validationField);
+        const error = {};
+        fields.forEach((i) => {
+            const input = values[i];
+            if (typeof input === 'boolean' && input === true) {
+                error[i] = true;
+            } else if (typeof input === 'string' && input.length > 1) {
+                if ((i === 'confirmEmail' && input === values.email)) {
+                    error[i] = true;
+                } else if ((i === 'email' && this.validateEmail(input))) {
+                    error[i] = true;
+                } else if ((i === 'phoneNumber' && this.validateMobile(input))) {
+                    error[i] = true;
+                } else if ((i === 'fullName' && input)) {
+                    error[i] = true;
+                } else {
+                    error[i] = false;
+                }
+            } else {
+                error[i] = false;
+            }
+        });
+        setError(p => ({ ...p, ...error }));
+        return fields.every(i => error[i]);
     }
 }
 

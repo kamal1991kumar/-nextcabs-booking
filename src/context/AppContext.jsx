@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import Utils from 'helper/utils';
 import Http, { LOGO } from 'helper/httpApi';
 export const AppContext = createContext({});
@@ -36,7 +36,14 @@ export default function AppProvider({ children }) {
         countryCode: '+44',
         fullName: '',
         email: '',
-        confirmemail: '',
+        confirmEmail: '',
+        phoneNumber: ''
+    });
+    const [checkoutError, setCheckoutError] = useState({
+        termsAndCondition: '',
+        fullName: '',
+        email: '',
+        confirmEmail: '',
         phoneNumber: ''
     });
 
@@ -52,9 +59,17 @@ export default function AppProvider({ children }) {
         });
     };
 
+    useEffect(() => {
+        Utils.checkoutValidation(checkoutInfo, checkoutError, setCheckoutError);
+    }, [checkoutInfo])
+
     const paymentCheckout = async () => {
+        const result = Utils.checkoutValidation(checkoutInfo, checkoutError, setCheckoutError);
+        if (!result) {
+            return;
+        }
         const { fromDate, toDate } = searchData;
-        const { countryCode, fullName, email, phoneNumber, confirmemail, termsAndCondition, ...rest } = checkoutInfo;
+        const { countryCode, fullName, email, phoneNumber, confirmEmail, termsAndCondition, ...rest } = checkoutInfo;
         const payload = {
             source: LOGO,
             vehicleType: cabInfo?.type,
@@ -71,11 +86,10 @@ export default function AppProvider({ children }) {
             }
         }
         return await Http.tripCheckout(payload);
-    }
-
+    };
 
     return (
-        <AppContext.Provider value={{ cabInfo, setCabInfo, searchData, updateSearchData, getTripList, tripInfo, paymentCheckout, checkoutInfo, updateCheckoutInfo }}>
+        <AppContext.Provider value={{ cabInfo, setCabInfo, searchData, updateSearchData, getTripList, tripInfo, paymentCheckout, checkoutInfo, updateCheckoutInfo, checkoutError }}>
             {children}
         </AppContext.Provider>
     )

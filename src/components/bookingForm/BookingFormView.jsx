@@ -9,7 +9,7 @@ export default function BookingFormView({ searchData, updateSearchData, isSearch
                 <div className='col'><h5 className='bookingContainer__tab text-center p-3 mb-0 bg-white rounded-top'><MdLocalAirport /> <span className='d-none d-lg-inline'>Airport</span> Transfers</h5></div>
                 <div className='col'>&nbsp;</div>
             </div>
-            <div className='bookingContainer__box px-2 py-4 bg-white'>
+            <div className='bookingContainer__box px-2 py-4 bg-white rounded-bottom rounded-end'>
                 <div className='container py-2'>
                     <div className='row'>
                         <div className='col-12 col-lg-6'>
